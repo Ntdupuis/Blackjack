@@ -45,7 +45,7 @@
             // 
             // dealButton
             // 
-            this.dealButton.Location = new System.Drawing.Point(12, 281);
+            this.dealButton.Location = new System.Drawing.Point(300, 376);
             this.dealButton.Name = "dealButton";
             this.dealButton.Size = new System.Drawing.Size(75, 23);
             this.dealButton.TabIndex = 3;
@@ -55,7 +55,8 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(154, 137);
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox2.Location = new System.Drawing.Point(480, 194);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(71, 96);
             this.pictureBox2.TabIndex = 2;
@@ -63,7 +64,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(77, 137);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Location = new System.Drawing.Point(361, 194);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 96);
             this.pictureBox1.TabIndex = 1;
@@ -79,7 +81,7 @@
             // 
             // hitMeButton
             // 
-            this.hitMeButton.Location = new System.Drawing.Point(12, 315);
+            this.hitMeButton.Location = new System.Drawing.Point(381, 376);
             this.hitMeButton.Name = "hitMeButton";
             this.hitMeButton.Size = new System.Drawing.Size(75, 23);
             this.hitMeButton.TabIndex = 6;
@@ -89,27 +91,28 @@
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(12, 389);
+            this.resetButton.Location = new System.Drawing.Point(543, 376);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 23);
             this.resetButton.TabIndex = 7;
-            this.resetButton.Text = "Reset";
+            this.resetButton.Text = "New deal";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 354);
+            this.button1.Location = new System.Drawing.Point(462, 376);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
-            this.button1.Text = "Player Stop";
+            this.button1.Text = "Stop";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.PlayerStopButton_Click);
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(77, 12);
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox4.Location = new System.Drawing.Point(423, 53);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(71, 96);
             this.pictureBox4.TabIndex = 10;
@@ -118,7 +121,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 183);
+            this.label1.Location = new System.Drawing.Point(440, 315);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 11;
@@ -127,17 +130,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 53);
+            this.label2.Location = new System.Drawing.Point(440, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Banker";
+            this.label2.Text = "Dealer";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Blackjack.Properties.Resources.greenfelt;
+            this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(936, 513);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

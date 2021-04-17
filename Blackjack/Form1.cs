@@ -13,25 +13,6 @@ namespace Blackjack
 {
     public partial class Form1 : Form
     {
-        /* http://patorjk.com/software/taag/
-        //https://github.com/pda87/Blackjack
-         
- ________  ___       ________  ________  ___  __          ___  ________  ________  ___  __       
-|\   __  \|\  \     |\   __  \|\   ____\|\  \|\  \       |\  \|\   __  \|\   ____\|\  \|\  \     
-\ \  \|\ /\ \  \    \ \  \|\  \ \  \___|\ \  \/  /|_     \ \  \ \  \|\  \ \  \___|\ \  \/  /|_   
- \ \   __  \ \  \    \ \   __  \ \  \    \ \   ___  \  __ \ \  \ \   __  \ \  \    \ \   ___  \  
-  \ \  \|\  \ \  \____\ \  \ \  \ \  \____\ \  \\ \  \|\  \\_\  \ \  \ \  \ \  \____\ \  \\ \  \ 
-   \ \_______\ \_______\ \__\ \__\ \_______\ \__\\ \__\ \________\ \__\ \__\ \_______\ \__\\ \__\
-    \|_______|\|_______|\|__|\|__|\|_______|\|__| \|__|\|________|\|__|\|__|\|_______|\|__| \|__|
-          
-         */
-
-        /////////////////////////////////////////////////////////////////////////////////
-        ////// A C# WINDOWS FORM APP SIMULATING A GAME OF THE CARD GAME 'BLACKJACK' /////
-        /////////////////////// AUTHOR: PETER ARDEN /////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////
-
-        //CHANGE THE VALUE OF ALL FACE CARDS TO 10, AND THE ACE TO 11
 
         List<Card> playercardList = new List<Card>()
         {
@@ -51,7 +32,7 @@ namespace Blackjack
         List<PictureBox> playerbox = new List<PictureBox>();
 
 
-        #region creationof52carddeck
+        #region creationofdeck
 
         List<Card> deck = new List<Card>()
             {
@@ -140,13 +121,13 @@ namespace Blackjack
             resetGame();
         }
 
-        //start the game 
+       
          private void startButton_Click(object sender, EventArgs e)
         {
             if (playercardSum > 0)
             {
                     resultLabel.Text = String.Format
-                    ("Already started.");
+                    ("The game is already started.");
             }
 
             else
@@ -198,13 +179,13 @@ namespace Blackjack
 
                 sumPlayerCards();
 
-                //sumCards();
+                
 
                 if (playercardSum == 21)
                 {
                     resultLabel.Text = String.Format
-                        ("The sum of your cards is: {0}, you win!", playercardSum);
-                    MessageBox.Show("You win!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        ("The sum of your cards is {0}", playercardSum);
+                    MessageBox.Show("You win the game!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     resetGame();
                 }
 
@@ -264,21 +245,21 @@ namespace Blackjack
                 }
             }
         }
-        // give one card to player
+        
         private void DealButton_Click(object sender, EventArgs e)
         {
             if (playercardSum == 0)
             {
-                resultLabel.Text = "Click the Start button...";
-                //displayCardBack(pictureBox3);
+                resultLabel.Text = "Press the start button";
+                
             }
 
             else
             {
-                if (playercardSum > 100) //to be changed
+                if (playercardSum > 100) 
                 {
                     resetGame();
-                    resultLabel.Text = "Resetting game...";
+                    resultLabel.Text = "Resetting the game.";
                 }
 
                 else
@@ -292,7 +273,6 @@ namespace Blackjack
                     else randomCard = 1 * randomCard;
 
 
-                    //player new card
                     PictureBox p3 = new PictureBox();
                     p3.Width = 71;
                     p3.Height = 96;
@@ -308,15 +288,15 @@ namespace Blackjack
                     if (playercardSum > 21)
                     {
                         resultLabel.Text = String.Format
-                            ("The sum of your cards is: {0}, you lose!", playercardSum);
-                        MessageBox.Show("You lose!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ("The sum of your cards is {0}", playercardSum);
+                        MessageBox.Show("You lose the game!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         resetGame();
                     }
                     else if (playercardSum == 21)
                     {
                         resultLabel.Text = String.Format
-                            ("The sum of your cards is: {0}, you win!", playercardSum);
-                        MessageBox.Show("You win!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ("The sum of your cards is {0}", playercardSum);
+                        MessageBox.Show("You win the game!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         resetGame();
                     }
                 }
@@ -334,9 +314,7 @@ namespace Blackjack
 
             displayCardBack(pictureBox1);
             displayCardBack(pictureBox2);
-            //displayCardBack(pictureBox3);
             displayCardBack(pictureBox4);
-            //displayCardBack(pictureBox6);
             foreach(PictureBox pb in playerbox)
             {
                 this.Controls.Remove(pb);
@@ -353,7 +331,7 @@ namespace Blackjack
             playercardList.Clear();
             bankercardList.Clear();
             usedCards.Clear();
-            resultLabel.Text = "Player choice";
+            resultLabel.Text = "Player's choice";
         }
 
         private void displayCardBack(PictureBox picturebox)
@@ -362,17 +340,17 @@ namespace Blackjack
             picturebox.SizeMode = PictureBoxSizeMode.AutoSize;
         }
 
-        // palyer stop move
+       
         private void PlayerStopButton_Click(object sender, EventArgs e)
         {
             if (playercardSum == 0)
             {
-                resultLabel.Text = "Click the Start button...";
+                resultLabel.Text = "Press the start button";
                 return;
             }
             sumBankerCards();
 
-            //banker move
+           
             while (bankercardSum <= 16)
             {
                 int randomCard = selectRandomCard();
@@ -400,22 +378,22 @@ namespace Blackjack
             if (bankercardSum > 21)
             {
                 resultLabel.Text = String.Format
-                    ("The sum of banker cards is: {0}, you lose!", bankercardSum);
-                MessageBox.Show("You win!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ("The sum of banker cards is {0}", bankercardSum);
+                MessageBox.Show("You win the game!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 resetGame();
             }
             else if (playercardSum <= bankercardSum)
             {
                 resultLabel.Text = String.Format
-                    ("The sum of your cards is: {0}, you lose!", playercardSum);
-                MessageBox.Show("You lose!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ("The sum of your cards is {0}", playercardSum);
+                MessageBox.Show("You lose the game!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 resetGame();
             }
             else
             {
                 resultLabel.Text = String.Format
-                    ("The sum of your cards is: {0}, you win!", playercardSum);
-                MessageBox.Show("You win!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ("The sum of your cards is {0}", playercardSum);
+                MessageBox.Show("You win the game!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 resetGame();
             }
 
